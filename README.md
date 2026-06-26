@@ -38,7 +38,7 @@ sddm-greeter --test-mode --theme /usr/share/sddm/themes/marvel
 
 ## Showcase website
 
-A standalone static showcase lives in [`website/`](./website/) — plain
+A standalone static showcase lives in [`website/`](https://kadhiravaneg.github.io/sddm-themes/) — plain
 HTML / CSS / JS, zero build step. Open it directly:
 
 ```bash
