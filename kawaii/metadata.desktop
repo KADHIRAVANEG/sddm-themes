@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Kawaii Soft
+Description=Pastel rounded card with floating hearts and Comic Sans warmth.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=kawaii
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.png

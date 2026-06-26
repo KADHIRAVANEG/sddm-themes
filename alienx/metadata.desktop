@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Alien X Omnitrix
+Description=Sci-fi terminal — green-on-black command console with scanlines.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=alienx
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.png

@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Joker
+Description=Off-center theatrical serif login with smile-red and sickly green accents.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=joker
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.jpg

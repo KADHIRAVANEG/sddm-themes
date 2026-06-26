@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Red Dead Redemption II
+Description=Wanted-poster parchment card under a western key-art bleed.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=rdr2
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.jpg

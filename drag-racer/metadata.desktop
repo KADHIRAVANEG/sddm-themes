@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Drag Racer
+Description=Racing telemetry overlay with stage-ready HUD and a pill-shaped login.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=drag-racer
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.jpg

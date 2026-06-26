@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Gojo Infinity
+Description=Monochrome manga split — artwork left, thin-stroke serif login right.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=gojo
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.png

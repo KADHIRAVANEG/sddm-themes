@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Classic JDM
+Description=Full-bleed photo with a dashboard HUD bar — odometer clock and amber controls.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=classic-jdm
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.jpg

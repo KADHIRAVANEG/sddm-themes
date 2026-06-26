@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>cozylock — SDDM theme collection</title>
+  <meta name="description" content="10 ricer-grade SDDM lockscreen themes — pure QML, no JS deps." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="tag">// sddm · qml · arch / hyprland / kde</div>
+    <h1>cozylock<span class="cursor">_</span></h1>
+    <p class="lede">
+      Ten self-contained SDDM greeter themes. Drop into
+      <code>/usr/share/sddm/themes/</code>, pick your aesthetic, lock in.
+    </p>
+    <div class="cmd" id="installCmd" title="click to copy">
+      <span class="prompt">$</span>
+      <span class="cmd-text">sudo ./install.sh <em id="activeId">marvel</em></span>
+      <span class="copy">copy</span>
+    </div>
+  </header>
+
+  <section class="stage">
+    <div class="preview" id="preview"></div>
+    <aside class="picker" id="picker"></aside>
+  </section>
+
+  <section class="grid" id="grid"></section>
+
+  <section class="setup">
+    <h2>three commands</h2>
+    <pre><code>git clone https://github.com/&lt;you&gt;/cozylock
+cd cozylock/sddm-themes
+sudo ./install.sh &lt;theme-id&gt;</code></pre>
+    <p class="muted">
+      Test without rebooting: <code>sddm-greeter --test-mode --theme /usr/share/sddm/themes/&lt;theme-id&gt;</code>
+    </p>
+  </section>
+
+  <footer>
+    <span>pure QML · zero JS deps in the greeter · MIT</span>
+    <span>website lives in <code>sddm-themes/website/</code></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

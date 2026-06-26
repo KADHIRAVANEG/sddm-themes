@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Marvel Studios
+Description=Cinematic title-card greeter — bold red ENTER block over a black stage.
+Author=qylock-inspired
+License=MIT
+Type=sddm-theme
+Version=1.0
+Theme-Id=marvel
+Theme-API=2.0
+QtVersion=5
+MainScript=Main.qml
+ConfigFile=theme.conf
+Screenshot=assets/wallpaper.jpg
