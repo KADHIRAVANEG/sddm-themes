@@ -18,7 +18,7 @@ const grid = $("#grid");
 const activeId = $("#activeId");
 const cmd = $("#installCmd");
 
-const USER = "JOKER53";
+const USER = "Kadhir";
 let current = themes[0];
 
 const pad = (n) => String(n).padStart(2, "0");
