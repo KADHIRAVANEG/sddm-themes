@@ -4,45 +4,73 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>cozylock — SDDM theme collection</title>
-  <meta name="description" content="10 ricer-grade SDDM lockscreen themes — pure QML, no JS deps." />
+  <meta name="description" content="10 ricer-grade SDDM lockscreen themes — pure QML, no JS deps in the greeter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
   <header class="hero">
-    <div class="tag">// sddm · qml · arch / hyprland / kde</div>
+    <div class="hero-tag">// sddm · qml · arch / hyprland / kde</div>
     <h1>cozylock<span class="cursor">_</span></h1>
     <p class="lede">
       Ten self-contained SDDM greeter themes. Drop into
       <code>/usr/share/sddm/themes/</code>, pick your aesthetic, lock in.
     </p>
-    <div class="cmd" id="installCmd" title="click to copy">
+
+    <div class="cmd-bar" id="installCmd" title="Click to copy">
       <span class="prompt">$</span>
-      <span class="cmd-text">sudo ./install.sh <em id="activeId">marvel</em></span>
-      <span class="copy">copy</span>
+      <span class="cmd-text">sudo ./install.sh <span id="activeId">marvel</span></span>
+      <button class="copy-btn" id="copyBtn" aria-label="Copy command">copy</button>
     </div>
   </header>
 
-  <section class="stage">
-    <div class="preview" id="preview"></div>
-    <aside class="picker" id="picker"></aside>
+  <!-- ── STAGE: preview + picker ──────────────────────────── -->
+  <section class="stage" aria-label="Theme preview">
+    <div class="preview-wrap">
+      <div class="preview" id="preview" role="img" aria-label="Theme wallpaper preview">
+        <div class="preview-overlay">
+          <span class="preview-label" id="previewLabel">marvel</span>
+          <span class="preview-vibe" id="previewVibe">Cinematic title card</span>
+        </div>
+      </div>
+    </div>
+    <aside class="picker" id="picker" aria-label="Theme selector"></aside>
   </section>
 
-  <section class="grid" id="grid"></section>
+  <!-- ── GRID: all themes ──────────────────────────────────── -->
+  <section class="grid-section">
+    <h2 class="section-title">all themes</h2>
+    <div class="grid" id="grid"></div>
+  </section>
 
+  <!-- ── SETUP ─────────────────────────────────────────────── -->
   <section class="setup">
-    <h2>three commands</h2>
-    <pre><code>git clone https://github.com/&lt;you&gt;/cozylock
-cd cozylock/sddm-themes
+    <h2 class="section-title">three commands</h2>
+    <pre class="code-block"><code>git clone https://github.com/KADHIRAVANEG/sddm-themes
+cd sddm-themes
 sudo ./install.sh &lt;theme-id&gt;</code></pre>
     <p class="muted">
-      Test without rebooting: <code>sddm-greeter --test-mode --theme /usr/share/sddm/themes/&lt;theme-id&gt;</code>
+      Test without rebooting:
+      <code>sddm-greeter --test-mode --theme /usr/share/sddm/themes/&lt;theme-id&gt;</code>
+    </p>
+    <p class="muted">
+      Requirements: SDDM ≥ 0.19 · Qt5 (<code>qt5-quickcontrols2</code>, <code>qt5-graphicaleffects</code>)
     </p>
   </section>
 
-  <footer>
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
     <span>pure QML · zero JS deps in the greeter · MIT</span>
-    <span>website lives in <code>sddm-themes/website/</code></span>
+    <a href="https://github.com/KADHIRAVANEG/sddm-themes" target="_blank" rel="noopener">
+      github.com/KADHIRAVANEG/sddm-themes
+    </a>
   </footer>
+
+  <div class="toast" id="toast" aria-live="polite">Copied!</div>
 
   <script src="script.js"></script>
 </body>
