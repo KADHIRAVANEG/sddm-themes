@@ -1,66 +1,117 @@
-# SDDM Themes — cozylock
+# SDDM Themes 
 
-For Reference visit the web [grub-themes]( https://kadhiravaneg.github.io/sddm-themes/)
+For reference visit the showcase → **[kadhiravaneg.github.io/sddm-themes](https://kadhiravaneg.github.io/sddm-themes)**
 
-
-Ten self-contained SDDM (Qt5) themes, each built around one of the
+Ten self-contained SDDM (Qt5/Qt6) themes, each built around one of the
 reference wallpapers with a **deliberately different layout structure** —
 no shared components, no copy-paste UI. Pick the one you want and install it.
 
-| ID            | Vibe                             | Layout                                                    |
-| ------------- | -------------------------------- | --------------------------------------------------------- |
-| `marvel`      | Cinematic title card             | Tiny logo top → huge red `ENTER` block → underline inputs |
-| `classic-jdm` | JDM dashboard                    | Full-bleed photo + bottom HUD bar (clock · login · power) |
-| `alienx`      | Sci-fi command terminal          | Subject right, vertical green console left + scanlines    |
-| `drag-racer`  | Racing telemetry HUD             | Top-left mega clock, bottom-right pill login + GO button  |
-| `gojo`        | Manga monochrome split           | Left-pinned `INFINITY` panel, Gojo face stays clear right |
-| `kawaii`      | Pastel rounded card              | Subject right, big rounded pink card + floating hearts    |
-| `joker`       | Off-center theatrical serif      | Vignette portrait, narrow right-third login column        |
-| `rdr2`        | Wanted-poster western            | Bottom-center parchment card, framed clock top-right      |
-| `deadpool`    | Snarky chat-bubble panel         | Left chat-bubble login, hero portrait stays right         |
-| `bmw`         | BMW M-stripe ignition HUD        | Left key-fob ignition panel, classic cars stay right      |
+| ID            | Vibe                        | Layout                                                    |
+| ------------- | --------------------------- | --------------------------------------------------------- |
+| `marvel`      | Cinematic title card        | Tiny logo top → huge red `ENTER` block → underline inputs |
+| `classic-jdm` | JDM dashboard               | Full-bleed photo + bottom HUD bar (clock · login · power) |
+| `alienx`      | Sci-fi command terminal     | Subject right, vertical green console left + scanlines    |
+| `drag-racer`  | Racing telemetry HUD        | Top-left mega clock, bottom-right pill login + GO button  |
+| `gojo`        | Manga monochrome split      | Left-pinned `INFINITY` panel, Gojo face stays clear right |
+| `kawaii`      | Pastel rounded card         | Subject right, big rounded pink card + floating hearts    |
+| `joker`       | Off-center theatrical serif | Vignette portrait, narrow right-third login column        |
+| `rdr2`        | Wanted-poster western       | Bottom-center parchment card, framed clock top-right      |
+| `deadpool`    | Snarky chat-bubble panel    | Left chat-bubble login, hero portrait stays right         |
+| `bmw`         | BMW M-stripe ignition HUD   | Left key-fob ignition panel, classic cars stay right      |
+
+---
+
+## Requirements
+
+Install these before running the install script.
+
+| Distro       | Command                                                                 |
+| ------------ | ----------------------------------------------------------------------- |
+| **Arch**     | `pacman -S sddm qt5-quickcontrols2 qt5-graphicaleffects qt5-declarative` |
+| **Fedora**   | `dnf install sddm qt5-qtdeclarative qt5-qtgraphicaleffects`             |
+| **Debian/Ubuntu** | `apt install sddm qml-module-qtquick2 qml-module-qtgraphicaleffects qml-module-qtquick-controls2` |
+| **openSUSE** | `zypper install sddm libqt5-qtdeclarative qt5-graphicaleffects`         |
+
+> The install script auto-detects your Qt version (Qt5 or Qt6) and patches
+> import lines automatically — no manual editing needed.
+
+---
 
 ## Install
 
 ```bash
-sudo ./install.sh marvel        # or any other theme id above
+git clone https://github.com/KADHIRAVANEG/sddm-themes
+cd sddm-themes
+sudo ./install.sh marvel        # replace marvel with any theme id above
 systemctl restart sddm          # or reboot
 ```
 
-The script copies the chosen theme to `/usr/share/sddm/themes/<id>` and sets
-`Current=<id>` in `/etc/sddm.conf`.
+The script:
+- Detects Qt5 / Qt6 and patches QML imports automatically
+- Copies the theme to `/usr/share/sddm/themes/<id>`
+- Sets `Current=<id>` in `/etc/sddm.conf`
+- Backs up any existing theme before overwriting
+
+---
 
 ## Preview without rebooting
 
 ```bash
 sddm-greeter --test-mode --theme /usr/share/sddm/themes/marvel
+# Qt6 systems:
+sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/marvel
 ```
+
+---
+
+## Customize
+
+Each theme has its own `theme.conf` with a `brand` accent colour and
+`background` path. Drop in a different wallpaper at
+`<theme>/assets/wallpaper.*` and reinstall.
+
+```ini
+[General]
+background=assets/wallpaper.jpg
+brand=#ed1d24
+```
+
+---
 
 ## Showcase website
 
-A standalone static showcase lives in [`website/`](https://kadhiravaneg.github.io/sddm-themes/) — plain
-HTML / CSS / JS, zero build step. Open it directly:
+A static showcase is included at the repo root — plain HTML / CSS / JS,
+zero build step.
 
 ```bash
-xdg-open website/index.html
-# or serve it locally
-cd website && python3 -m http.server 8000
+# open directly
+xdg-open index.html
+
+# or serve locally
+python3 -m http.server 8000
 ```
 
-The page lets you browse all ten themes, swap the live preview, copy the
-install command for the active theme, and read the three-command setup —
-all without leaving the `sddm-themes/` folder.
+---
+
+## Structure
 
 ```
 sddm-themes/
 ├── README.md
 ├── install.sh
-├── website/                ← HTML / CSS / JS showcase
-│   ├── index.html
-│   ├── styles.css
-│   └── script.js
-├── marvel/  classic-jdm/  alienx/  drag-racer/  gojo/
-├── kawaii/  joker/  rdr2/  deadpool/  bmw/
+├── index.html              ← showcase website
+├── styles.css
+├── script.js
+├── marvel/
+├── classic-jdm/
+├── alienx/
+├── drag-racer/
+├── gojo/
+├── kawaii/
+├── joker/
+├── rdr2/
+├── deadpool/
+├── bmw/
 └── <each theme>/
     ├── Main.qml
     ├── metadata.desktop
@@ -68,20 +119,17 @@ sddm-themes/
     └── assets/wallpaper.{jpg,png}
 ```
 
-## Customize
+---
 
-Each theme has its own `theme.conf` with a `brand` accent and `background`
-path. Drop in a different wallpaper at `<theme>/assets/wallpaper.*` and
-reinstall.
+## Notes
 
-## Requirements
+- SDDM ≥ 0.19 required
+- These themes only render on a real Linux machine with SDDM/Qt installed —
+  the web showcase displays wallpapers and metadata only
+- Tested on Arch Linux with Hyprland and KDE Plasma
 
-- SDDM ≥ 0.19
-- Qt 5 (`qt5-quickcontrols2`, `qt5-graphicaleffects`)
-- For Qt 6 systems: swap the `import QtQuick 2.15` lines for `import QtQuick`
-  and set `QtVersion=6` in `metadata.desktop`.
+---
 
-> Heads up: SDDM is a Linux display-manager runtime — these themes can only
-> be previewed on a real Linux machine with SDDM/Qt installed. The greeters
-> themselves will not render inside a web browser; the `website/` page only
-> showcases their wallpapers and metadata.
+## License
+
+MIT — see [LICENSE](LICENSE)
