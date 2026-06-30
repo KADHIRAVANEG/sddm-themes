@@ -119,6 +119,46 @@ sddm-themes/
     └── assets/wallpaper.{jpg,png}
 ```
 
+## Flow chart
+
+```mermaid
+flowchart LR
+    %% Styling Definitions
+    classDef root fill:#2c3e50,stroke:#34495e,stroke-width:2px,color:#fff;
+    classDef script fill:#f1c40f,stroke:#f39c12,stroke-width:2px,color:#000;
+    classDef web fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff;
+    classDef theme fill:#8e44ad,stroke:#7d3c98,stroke-width:2px,color:#fff;
+    classDef asset fill:#ecf0f1,stroke:#bdc3c7,stroke-width:1px,color:#2c3e50;
+
+    Root[sddm-themes]:::root
+    
+    %% Repository Root Files
+    Root --> Readme[README.md]:::asset
+    Root --> Install[install.sh]:::script
+    Root --> Web[Showcase Website]:::web
+    
+    %% Website components
+    Web --> Index[index.html]:::web
+    Web --> CSS[styles.css]:::web
+    Web --> JS[script.js]:::web
+
+    %% Theme Collections
+    Root --> Themes[Theme Directories]:::theme
+    
+    Themes --> Marvel[marvel/]:::theme
+    Themes --> JDM[classic-jdm/]:::theme
+    Themes --> Alien[alienx/]:::theme
+    Themes --> More[...]
+    Themes --> Joker[joker/]:::theme
+    
+    %% Theme Anatomy (Example)
+    Marvel --> QML[Main.qml]:::asset
+    Marvel --> Meta[metadata.desktop]:::asset
+    Marvel --> Conf[theme.conf]:::asset
+    Marvel --> Assets[assets/]:::asset
+    Assets --> Wallpaper[wallpaper.jpg/png]:::asset
+```
+
 ---
 
 ## Notes
