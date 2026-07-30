@@ -1,4 +1,4 @@
-# SDDM Themes 
+# SDDM Themes ! 
 
 For reference visit the showcase → **[kadhiravaneg.github.io/sddm-themes](https://kadhiravaneg.github.io/sddm-themes)**
 
