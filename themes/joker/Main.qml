@@ -116,6 +116,7 @@ Rectangle {
                 controller: auth
                 Accessible.name: qsTr("Username")
                 width: parent.width
+                height: 44
 
                 foreground: root.text
                 font.family: "sans-serif"
@@ -144,6 +145,7 @@ Rectangle {
                 enabled: !auth.busy
                 Accessible.name: qsTr("Password")
                 width: parent.width
+                height: 44
                 placeholderText: qsTr("Password")
                 focus: true
                 echoMode: TextInput.Password
