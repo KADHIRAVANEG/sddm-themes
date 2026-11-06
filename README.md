@@ -9,7 +9,7 @@
 Install SDDM and Python 3 first. Animated themes also require FFmpeg. The installer detects the available greeter and installs missing QML modules on Arch, Debian/Ubuntu, Fedora, and openSUSE.
 
 ```bash
-git clone https://github.com/JOKER-53/sddm-themes
+git clone https://github.com/KADHIRAVANEG/sddm-themes
 cd sddm-themes
 ./install.sh --list
 sudo ./install.sh marvel
@@ -89,8 +89,8 @@ GitHub Pages deployment runs the validation, installer, Qt5/Qt6 and browser chec
 
 ## Author
 
-**JOKER-53** (alias **Kadhiravan E.G.**)
-- GitHub: [@JOKER-53](https://github.com/JOKER-53)
+**KADHIRAVANEG** (alias **Kadhiravan E.G.**)
+- GitHub: [@KADHIRAVANEG](https://github.com/KADHIRAVANEG)
 
 ## License
 
